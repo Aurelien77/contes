@@ -33,6 +33,18 @@ position: relative;
     border-radius: 1%;
     box-shadow: 1px 1px 1px px rgb(17, 17, 17);
 }
+
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) {
+  /* styles pour iPad */
+  #flipbook {
+   
+    width: 768px;
+    height: 1024px;
+    /* autres styles */
+  }
+}
 #capteur img{
   width: 50%;
   margin-top: 5rem;
