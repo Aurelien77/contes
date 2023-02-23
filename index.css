@@ -9,7 +9,17 @@ html {
     overflow-y: hidden; 
 }
 
+.flex_horizon {
+    display: flex;
+    border-left: 6px solid black;
+  
+    padding-left: 1rem;
+  }
 
+  .couleur {
+background-color: white;
+
+  }
 .container  {
 display: flex;
 /* align-items: center; */
@@ -26,7 +36,8 @@ border-radius: 1%;
 
 }
 #capteur {
-
+width: 50%;
+height: 40%;
 position: relative;
 }
 #flipbook{
@@ -88,19 +99,53 @@ and (max-device-width: 1024px) {
 /* border: 2px solid red; */
   }
 }
+.image-sommaire img {
 
+    margin-top: 0rem;
+    width: 5rem;
+  
+  }
+  .sommaire {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 1rem;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px rgb(26, 24, 24);
+    /* -webkit-text-fill-color: transparent; */
+    -webkit-text-stroke: 0.2px rgb(232, 232, 233);
+    font-size: 01rem;
+ 
+  }
+
+   
+  .sommaire span {
+  
+    color: red;
+
+  }
+  .sommaire div {
+
+    background-color: rgb(47, 91, 134);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 10% 0% 0% 10%;
+  }
+
+  
 .shadow {
 
 
     box-shadow: 0px 0px 5px 5px rgb(17, 142, 245)
 }
-.text_sommaire{
+/* .text_sommaire{
 
 
     display: flex;
     flex-direction: column;
 }
-
+ */
 .image_sommaire{
 
 
@@ -123,16 +168,16 @@ and (max-device-width: 1024px) {
   /*   /////////////////////////////////////////////// ////////////////////////////////////////////////////////////////////////////////////////////////*/
   .container2 {
     display: flex;
-  
+
   
     justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 20%;
+  margin-bottom: 2rem;
   
   
-  
-    width: 100%;
+   
   }
   
   .container2 :hover {
@@ -141,8 +186,8 @@ and (max-device-width: 1024px) {
   }
 .letter {
     align-items: center;
-    font-family: "Varela Round", sans-serif;
-    font-size: 4.5rem;
+    font-family: 'Yellowtail', cursive;
+    font-size: 3.5rem;
     color: rgb(52, 21, 138);
     -webkit-text-stroke: 0px gold;
     z-index: 1;
@@ -154,7 +199,7 @@ and (max-device-width: 1024px) {
   
   .c:after {
     content: "C";
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
   
   ._:after {
@@ -180,12 +225,12 @@ and (max-device-width: 1024px) {
   
   .o:after {
     content: "O";
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
   
   .e:after {
     content: "E";
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
   
   .i:after {
@@ -200,7 +245,7 @@ and (max-device-width: 1024px) {
   
   .t:after {
     content: "T";
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
   
   .r:after {
@@ -210,17 +255,17 @@ and (max-device-width: 1024px) {
 
   .s:after {
     content: "S";
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
   .m:after {
     content: "M";
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
   
   
   .n:after {
     content: "N";
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
   
   .c:after,

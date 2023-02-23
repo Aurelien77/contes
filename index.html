@@ -11,7 +11,9 @@
     
     <script src="./bliblio/5396f77366f55-turnjs4/turnjs4/lib/turn.min.js"></script>
 
-
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet"> 
 
 
 </head>
@@ -22,7 +24,7 @@
 <div id="flipbook">
 	
 	<div class="hard shadow"><img src="./images/couverture.jpg"> </div>
-	<div class="hard shadow"><img src="./images/contes.jpg"> </div>
+	<div class="hard shadow couleur"><img src="./images/contes.jpg"> </div>
 
 	<div class="page shadow"> 
 		
@@ -43,39 +45,35 @@
 
 		  
 <div class="texte_sommaire ">
-			<div class="image_sommaire" > 
+	<div class="flex_horizon">
+		<div class="image-sommaire">
+		  <img src="./images/sommaire.png" />
+		</div>
 
-
-
-				<img src="./images/sommaire.png">
-
-			</div>
-
+		<div class="sommaire">
 			<div>
-			<div>
-			  Page n°2 à n°7....................<span>Le chat et le chien</span>{" "}
-			  <br></br>
-			  autres
+			  Page n°2 à n°3....................<span>Le chat et le chien</span>
+			  
+			 
 			</div>
 			<div>
-			  Page n°8 à n°11....................<span>Le herisson</span>{" "}
-			  <br></br>
+			  Page n°4 à n°5....................<span>Le herisson</span>
+			 
 			</div>
 			<div>
-			  Page n°12 à n°17....................
-			  <span>La grenouille et le dragon</span> <br></br>
+			  Page n°6 à n°7....................
+			  <span>La grenouille et le dragon</span> 
 			</div>
 			<div>
-			  Page n°18 à n°23....................<span>Le perroquet et le rhinocéros</span>{" "}
-			  <br></br>
+			  Page n°8 à n°9....................<span>Le perroquet et le rhinocéros</span>
+			 
 			</div>
-			<div>
-			  Page n°24 à n°29....................<span>SOURP</span>
-			  <br></br> Une application pour créer des procédures
-			  TypeScript qui peuvent êtres embarquées dans Sharepoint
-			</div>
+		
 
 		</div>
+	  </div>
+
+		
 		  </div>
 
 	
@@ -103,7 +101,7 @@
 <script type="text/javascript">
     $("#flipbook").turn({
         width: 988,
-        height: 620,
+        height: 640,
         autoCenter: false,
 		gradients: true,
     });
