@@ -84,7 +84,10 @@
 
 
 
-	<div class="page shadow"> <img src="./images/chat1.jpg">PLACE POUR LE FICHIER AUDIO </div>
+	<div class="page shadow"> <img src="./images/chat1.jpg"><audio controls>
+		<source src="./audio/chat.mp3" type="audio/mp3">
+		Votre navigateur ne supporte pas l'élément audio.
+	  </audio> </div>
 	<div class="page shadow"> <img src="./images/chat2.jpg">PLACE POUR LE FICHIER AUDIO  </div>
 	<div class="page"> <img src="./images/herisson2.jpg" id="her"> <img src="./images/profil.png" id="capteur"> PLACE POUR LE FICHIER AUDIO </div>
 	<div class="page"> <img src="./images/herisson.jpg">PLACE POUR LE FICHIER AUDIO </div>
@@ -101,7 +104,7 @@
 <script type="text/javascript">
     $("#flipbook").turn({
         width: 988,
-        height: 640,
+        height: 650,
         autoCenter: false,
 		gradients: true,
     });

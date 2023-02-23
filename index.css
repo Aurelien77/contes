@@ -47,7 +47,12 @@ position: relative;
 }
 
 
-
+audio {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-top: -1rem;
+  }
 
 
 #capteur img{
