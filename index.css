@@ -17,7 +17,7 @@ align-content: center;
 justify-content: center;
 justify-items: center;
 border-radius: 1%;
-    
+ 
 }
 
 #her {
@@ -40,13 +40,16 @@ and (min-device-width:1px)  and (max-device-width: 2000px)
 and (max-device-width: 1024px) {
   /* styles pour iPad */
   #flipbook {
-   border: 2px solid red;
+
      width: 768px;
     height: 1024px; 
-    padding: 2rem;
+   
     /* autres styles */
   }
 }
+
+
+
 #capteur img{
   width: 50%;
   margin-top: 5rem;
@@ -76,6 +79,25 @@ box-shadow: 1px 1px 1px 1px rgb(17, 17, 17); */
 /* background-color:transparent; */
 /* border: 0.5px solid black; */
 box-shadow: 1px 1px 1px 1px rgb(17, 17, 17);
+
+}
+
+@media only screen 
+and (min-device-width:1px)  and (max-device-width: 2000px) 
+and (max-device-width: 1024px) {
+  /* styles pour iPad */
+  #flipbook {
+
+   /*   width: 768px;
+    height: 1024px;  */
+   
+    /* autres styles */
+  }
+
+  .page{
+
+/* border: 2px solid red; */
+  }
 }
 
 .shadow {
