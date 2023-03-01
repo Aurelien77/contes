@@ -6,7 +6,7 @@ html {
     background-color: rgb(139, 139, 131);
 /*     background: lightblue url("img_tree.gif") no-repeat fixed center;   */
     background: lightblue url("./images/etoiles.jpg") repeat fixed center;  
-   /*  overflow-y: hidden;  */
+     overflow-x: hidden; 
 }
 
 @media (max-width: 768px) {
