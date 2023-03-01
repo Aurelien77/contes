@@ -115,11 +115,26 @@
 </body>
 
 <script type="text/javascript">
-    $("#flipbook").turn({
-        width: 1188,
-        height: 850,
-        autoCenter: false,
-		gradients: true,
+    function resizeFlipbook() {
+        var windowWidth = $(window).width();
+        var windowHeight = $(window).height();
+        var flipbookWidth = windowWidth > 768 ? 1188 : 600; // définissez votre breakpoint ici
+        var flipbookHeight = windowWidth > 768 ? 850 : 400; // définissez votre breakpoint ici
+
+        $("#flipbook").turn({
+            width: flipbookWidth,
+            height: flipbookHeight,
+            autoCenter: false,
+            gradients: true
+        });
+    }
+
+    $(window).resize(function() {
+        resizeFlipbook();
     });
+
+    // appel de la fonction pour la première fois
+    resizeFlipbook();
 </script>
+
 </html>
