@@ -2,8 +2,7 @@
 
 <head>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<!-- //Meta scale --->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="index.css" />
 
 
@@ -19,18 +18,18 @@
 
 </head>
 
-<body class="container ">
+<body class="container">
 
 
-<div id="flipbook" class="shadow">
+<div id="flipbook">
 	
-	<div class="hard"><img src="./images/couverture.jpg"> </div>
-	<div class="hard"><img src="./images/contes.jpg"> </div>
+	<div class="hard shadow"><img src="./images/couverture.jpg"> </div>
+	<div class="hard shadow"><img src="./images/contes.jpg"> </div>
 
-	<div class="page"> 
+	<div class="page shadow"> 
 		
-		<section class="container2">
-		
+		<section className="Header">
+			<div class="container2">
 			  <div class="M letter">M</div>
 			  <div class="E letter">E</div>
 			  <div class="S letter">S</div>
@@ -41,16 +40,16 @@
 			  <div class="t letter">T</div>
 			  <div class="E letter">E</div>
 			  <div class="S letter">S</div>
-		
+			</div>
 		  </section>
 
 		  
 
+
+		<div class="image-sommaire">
 	
-<!-- 		<div class="image-sommaire">
-		  <img src="./images/sommaire.png" />
-		</div>
- -->
+		
+
 		<div class="sommaire">
 			<div>
 			  Page n°2 à n°3....................<span>Le chat et le chien</span>
@@ -72,7 +71,7 @@
 		
 
 		</div>
-	  
+	  </div>
 
 		
 		 
@@ -85,46 +84,30 @@
 
 
 
-	<div class="page"> <img src="./images/chat1.jpg">
-
+	<div class="page shadow"> <img src="./images/chat1.jpg">
 		<audio controls preload="none">
 		<source src="./audio/chat.mp3" type="audio/mp3">
 		Votre navigateur ne supporte pas l'élément audio.
-	  </audio> 
-	
-	</div>
-	<div class="page"> <img src="./images/chat2.jpg">
-		
-		<audio controls preload="none">
+	  </audio> </div>
+	<div class="page shadow"> <img src="./images/chat2.jpg"><audio controls preload="none">
 		<source src="./audio/chien.mp3" type="audio/mp3">
 		Votre navigateur ne supporte pas l'élément audio.
-	  </audio>
-	
-	</div>
+	  </audio></div>
 	<div class="page"> <img src="./images/herisson2.jpg" id="her"> <img src="./images/profil.png" id="capteur"> </div>
-	<div class="page"> <img src="./images/herisson.jpg">
-		
-		<audio controls preload="none">
+	<div class="page"> <img src="./images/herisson.jpg"><audio controls preload="none">
 		<source src="./audio/herisson.mp3" type="audio/mp3">
 		Votre navigateur ne supporte pas l'élément audio.
-	  </audio> 
-	
-	
-	</div>
+	  </audio> </div>
 	<div class="page"> <img src="./images/grenouille.jpg"><audio controls preload="none">
 		<source src="./audio/grenouille.mp3" type="audio/mp3">
 		Votre navigateur ne supporte pas l'élément audio.
 	  </audio>  </div>
-	<div class="page"> <img src="./images/dragon.jpg">
-
-		<audio controls preload="none" >
+	<div class="page"> <img src="./images/dragon.jpg"><audio controls preload="none">
 		<source src="./audio/dragon.mp3" type="audio/mp3">
 		Votre navigateur ne supporte pas l'élément audio.
-	  </audio> 
-	
-	</div>
+	  </audio>  </div>
 	<div class="hard"></div>
-	<div class="hard"><img src="./images/contes.jpg"> </div>
+	<div class="hard shadow"><img src="./images/contes.jpg"> </div>
 	<div class="hard"><img src="./images/dos.jpg"> </div>
 </div>
 
@@ -132,55 +115,28 @@
 </body>
 
 <script type="text/javascript">
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isPortrait = window.innerHeight > window.innerWidth;
+    const isTV = /SmartTV|smart-tv|Smart\sTV|HbbTV|AppleTV|webOS|AndroidTV|OperaTV|NetCast|NETTV|SmartTVs|SmartTVs,\sRoku/i.test(navigator.userAgent);
 
+    let displayMode = 'double';
 
-function resizeFlipbook() {
-  const windowWidth = $(window).width();
-  const windowHeight = $(window).height();
+    if (isMobile && isPortrait) {
+        displayMode = 'single';
+    } else if (!isTV && !isPortrait) {
+        displayMode = 'double';
+    }
 
-  // Si l'écran est petit ou en mode portrait, on active le mode "une page à la fois"
-  var isMobile = windowWidth <= 768 || windowHeight <= 768;
-  var isPortrait = windowHeight > windowWidth;
-  var displayMode = isMobile && isPortrait ? 'single' : 'double';
-
-  // Si l'appareil est en mode portrait, on active le mode "une page à la fois"
-  if (isPortrait) {
-    displayMode = 'single';
-  } else {
-  
-      displayMode = 'double';
-    
-  }
-
-  // On calcule la largeur et la hauteur du flipbook en fonction du mode d'affichage
-  var flipbookWidth, flipbookHeight;
-  if (displayMode === 'single') {
-    flipbookWidth = windowWidth - 40;
-    flipbookHeight = windowHeight - 100;
-  } else {
-    flipbookWidth = windowWidth > 768 ? 1120 : 600;
-    flipbookHeight = windowWidth > 768 ? 782 : 400;
-  }
-  
-  // On initialise le flipbook avec les paramètres de taille et de mode d'affichage
-  $("#flipbook").turn({
-    width: flipbookWidth,
-    height: flipbookHeight,
-    autoCenter: false,
-    gradients: true,
-    display: displayMode
-  });
-}
-
-$(window).resize(function() {
-  resizeFlipbook();
-  location.reload();
-});
-
-// appel de la fonction pour la première fois
-resizeFlipbook();
-
-
+    if (!isTV) {
+        $("#flipbook").turn({
+            width: 1120,
+            height: 782,
+            autoCenter: false,
+            gradients: true,
+            display: displayMode
+        });
+    }
 </script>
 
 </html>
+
