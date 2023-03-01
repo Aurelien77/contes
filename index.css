@@ -9,6 +9,12 @@ html {
      overflow-x: hidden; 
 }
 
+body {
+
+
+  transform: scale(1);
+}
+
 @media (max-width: 768px) {
   #flipbook {
       display: single-page; /* afficher une seule page à la fois sur les téléphones */
@@ -26,6 +32,8 @@ justify-items: center;
 
  
 }
+
+
 
 #her {
     position: absolute;
@@ -54,6 +62,10 @@ audio {
     width: 50%;
    
     bottom: 5%;
+   /*  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); */
 
   }
 
