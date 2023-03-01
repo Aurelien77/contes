@@ -157,14 +157,9 @@ function resizeFlipbook() {
   } else {
     flipbookWidth = windowWidth > 768 ? 1188 : 600;
     flipbookHeight = windowWidth > 768 ? 850 : 400;
-  }// Rotation arriercouv en single page 
-  $(function() {
-  $("#flipbook").bind("start", function(event, pageObject, corner) {
-    if (corner === "tl" || corner === "l") {
-      $(".arrierecouv").toggleClass("rotate");
-    }
-  });
-});
+  }
+  
+
   // On initialise le flipbook avec les paramètres de taille et de mode d'affichage
   $("#flipbook").turn({
     width: flipbookWidth,
