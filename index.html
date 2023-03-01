@@ -2,7 +2,7 @@
 
 <head>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" type="text/css" href="index.css" />
 
 
@@ -24,7 +24,7 @@
 <div id="flipbook" class="shadow">
 	
 	<div class="hard"><img src="./images/couverture.jpg"> </div>
-	<div class="hard shadow"><img src="./images/contes.jpg"> </div>
+	<div class="hard"><img src="./images/contes.jpg"> </div>
 
 	<div class="page"> 
 		
@@ -137,28 +137,46 @@ function resizeFlipbook() {
   const windowWidth = $(window).width();
   const windowHeight = $(window).height();
 
-  const isMobile = windowWidth <= 768 || windowHeight <= 768;
-  const isPortrait = windowHeight > windowWidth;
-  const displayMode =  isPortrait ? 'single' : 'double';
+  // Si l'écran est petit ou en mode portrait, on active le mode "une page à la fois"
+  var isMobile = windowWidth <= 768 || windowHeight <= 768;
+  var isPortrait = windowHeight > windowWidth;
+  var displayMode = isMobile && isPortrait ? 'single' : 'double';
 
+  // Si l'appareil est en mode portrait, on active le mode "une page à la fois"
+  if (isPortrait) {
+    displayMode = 'single';
+  } else {
+  
+      displayMode = 'double';
+    
+  }
 
-  const isLandscape = windowHeight < windowWidth;
-/*   const displayModeOverride =  (!isMobile && isLandscape) ? 'double' : null; */
-  const display = /* displayModeOverride || */ displayMode;
-
-  const flipbookWidth = display === 'single' ? windowWidth - 40 : (windowWidth > 768 ? 1188 : 600);
-  const flipbookHeight = display === 'single' ? windowHeight - 100 : (windowWidth > 768 ? 850 : 400);
-
-  $('#flipbook').turn({
+  // On calcule la largeur et la hauteur du flipbook en fonction du mode d'affichage
+  var flipbookWidth, flipbookHeight;
+  if (displayMode === 'single') {
+    flipbookWidth = windowWidth - 40;
+    flipbookHeight = windowHeight - 100;
+  } else {
+    flipbookWidth = windowWidth > 768 ? 1188 : 600;
+    flipbookHeight = windowWidth > 768 ? 850 : 400;
+  }
+  
+  // On initialise le flipbook avec les paramètres de taille et de mode d'affichage
+  $("#flipbook").turn({
     width: flipbookWidth,
     height: flipbookHeight,
     autoCenter: false,
     gradients: true,
-    display: display
+    display: displayMode
   });
 }
 
-$(window).resize(resizeFlipbook);
+$(window).resize(function() {
+  resizeFlipbook();
+  location.reload();
+});
+
+// appel de la fonction pour la première fois
 resizeFlipbook();
 
 
