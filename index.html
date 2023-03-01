@@ -23,13 +23,13 @@
 
 <div id="flipbook">
 	
-	<div class="hard shadow"><img src="./images/couverture.jpg"> </div>
-	<div class="hard shadow couleur"><img src="./images/contes.jpg"> </div>
+	<div class="hard "><img src="./images/couverture.jpg"> </div>
+	<div class="hard  "><img src="./images/contes.jpg"> </div>
 
-	<div class="page shadow"> 
+	<div class="page"> 
 		
-		<section className="Header">
-			<div class="container2">
+		<section class="container2">
+		
 			  <div class="M letter">M</div>
 			  <div class="E letter">E</div>
 			  <div class="S letter">S</div>
@@ -40,17 +40,17 @@
 			  <div class="t letter">T</div>
 			  <div class="E letter">E</div>
 			  <div class="S letter">S</div>
-			</div>
+		
 		  </section>
 
 		  
-<div class="texte_sommaire ">
-	<div class="flex_horizon">
-		<div class="image-sommaire">
+
+	
+<!-- 		<div class="image-sommaire">
 		  <img src="./images/sommaire.png" />
 		</div>
-
-		<div class="sommaire">
+ -->
+		<div class="sommaire ">
 			<div>
 			  Page n°2 à n°3....................<span>Le chat et le chien</span>
 			  
@@ -71,10 +71,10 @@
 		
 
 		</div>
-	  </div>
+	  
 
 		
-		  </div>
+		 
 
 	
 	</div>
@@ -126,11 +126,15 @@
             height: flipbookHeight,
             autoCenter: false,
             gradients: true
+
         });
+
+		
     }
 
     $(window).resize(function() {
         resizeFlipbook();
+		location.reload();
     });
 
     // appel de la fonction pour la première fois

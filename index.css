@@ -9,17 +9,7 @@ html {
     overflow-y: hidden; 
 }
 
-.flex_horizon {
-    display: flex;
-    border-left: 6px solid black;
-  
-    padding-left: 1rem;
-  }
 
-  .couleur {
-background-color: white;
-
-  }
 .container  {
 display: flex;
 /* align-items: center; */
@@ -44,6 +34,8 @@ position: relative;
     margin-top: 5px;
     border-radius: 1%;
     box-shadow: 1px 1px 1px px rgb(17, 17, 17);
+    height: 100%;
+    width:100%;
 }
 
 
@@ -115,13 +107,19 @@ and (max-device-width: 1024px) {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-top: 1rem;
+    font-family: 'Yellowtail', cursive;
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px 1px rgb(26, 24, 24);
     /* -webkit-text-fill-color: transparent; */
     -webkit-text-stroke: 0.2px rgb(232, 232, 233);
-    font-size: 01rem;
+    font-size: 1.5rem;
  
+  }
+
+  @media (max-width: 768px) {
+    .sommaire {
+      font-size: 0.5rem;
+    }
   }
 
    
@@ -189,6 +187,8 @@ and (max-device-width: 1024px) {
     text-shadow: 1px 1px 1px rgb(6, 197, 79);
     font-size: 4rem;
   }
+
+  
 .letter {
     align-items: center;
     font-family: 'Yellowtail', cursive;
@@ -201,6 +201,8 @@ and (max-device-width: 1024px) {
     -ms-transform: translate3d(3px, 0px, 0);
     transform: translate3d(3px, 0px, 0);
   }
+
+
   
   .c:after {
     content: "C";
@@ -402,7 +404,83 @@ and (max-device-width: 1024px) {
     animation-delay: 4.3s;
     -webkit-animation-delay: 4.3s;
   }
+/* //////////////////////////////////////////////////////////////////////////////Breackpoint */
+  @media (max-width: 768px) {
+    .letter {
+      font-size: 0.8rem;
+    }
+    .c:after {
+      content: "C";
+      font-size: 0.8rem;
+    }
+    
+    ._:after {
+      content: "_";
+      font-size: 0.8rem;
+    }
+    
+    
+    .d:after {
+      content: "D";
+      font-size: 0.8rem;
+    }
+    
+    .f:after {
+      content: "F";
+      font-size: 0.8rem;
+    }
+    
+    .l:after {
+      content: "L";
+      font-size: 0.8rem;
+    }
+    
+    .o:after {
+      content: "O";
+      font-size: 0.8rem;
+    }
+    
+    .e:after {
+      content: "E";
+      font-size: 0.8rem;
+    }
+    
+    .i:after {
+      content: "I";
+      font-size: 4.5rem;
+    }
+    
+    .p:after {
+      content: "P";
+      font-size: 0.8rem;
+    }
+    
+    .t:after {
+      content: "T";
+      font-size: 0.8rem;
+    }
+    
+    .r:after {
+      content: "R";
+      font-size: 0.8rem;
+    }
   
+    .s:after {
+      content: "S";
+      font-size: 0.8rem;
+    }
+    .m:after {
+      content: "M";
+      font-size: 0.8rem;
+    }
+    
+    
+    .n:after {
+      content: "N";
+      font-size: 0.8rem;
+    }
+  }
+  /* //////////////////////////////////////////////////////////////////////////////FIN du Breackpoint */
   .letter {
     -webkit-animation: show 0.3s 4s 1 ease-out forwards;
     -moz-animation: show 0.3s 4s 1 ease-out forwards;
