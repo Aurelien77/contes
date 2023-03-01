@@ -134,49 +134,31 @@
 
 
 function resizeFlipbook() {
-  var windowWidth = $(window).width();
-  var windowHeight = $(window).height();
+  const windowWidth = $(window).width();
+  const windowHeight = $(window).height();
 
-  // Si l'écran est petit ou en mode portrait, on active le mode "une page à la fois"
-  var isMobile = windowWidth <= 768 || windowHeight <= 768;
-  var isPortrait = windowHeight > windowWidth;
-  var displayMode = isMobile && isPortrait ? 'single' : 'double';
+  const isMobile = windowWidth <= 768 || windowHeight <= 768;
+  const isPortrait = windowHeight > windowWidth;
+  const displayMode =  isPortrait ? 'single' : 'double';
 
-  // Si l'appareil est en mode portrait, on active le mode "une page à la fois"
-  if (isPortrait) {
-    displayMode = 'single';
-  } else {
-  
-      displayMode = 'double';
-    
-  }
 
-  // On calcule la largeur et la hauteur du flipbook en fonction du mode d'affichage
-  var flipbookWidth, flipbookHeight;
-  if (displayMode === 'single') {
-    flipbookWidth = windowWidth - 40;
-    flipbookHeight = windowHeight - 100;
-  } else {
-    flipbookWidth = windowWidth > 768 ? 1188 : 600;
-    flipbookHeight = windowWidth > 768 ? 850 : 400;
-  }
-  
-  // On initialise le flipbook avec les paramètres de taille et de mode d'affichage
-  $("#flipbook").turn({
+  const isLandscape = windowHeight < windowWidth;
+/*   const displayModeOverride =  (!isMobile && isLandscape) ? 'double' : null; */
+  const display = /* displayModeOverride || */ displayMode;
+
+  const flipbookWidth = display === 'single' ? windowWidth - 40 : (windowWidth > 768 ? 1188 : 600);
+  const flipbookHeight = display === 'single' ? windowHeight - 100 : (windowWidth > 768 ? 850 : 400);
+
+  $('#flipbook').turn({
     width: flipbookWidth,
     height: flipbookHeight,
     autoCenter: false,
     gradients: true,
-    display: displayMode
+    display: display
   });
 }
 
-$(window).resize(function() {
-  resizeFlipbook();
-  location.reload();
-});
-
-// appel de la fonction pour la première fois
+$(window).resize(resizeFlipbook);
 resizeFlipbook();
 
 
