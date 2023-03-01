@@ -23,8 +23,8 @@
 
 <div id="flipbook" class="shadow">
 	
-	<div class="hard current-page"><img src="./images/couverture.jpg"> </div>
-	<div class="hard"><img src="./images/contes.jpg"> </div>
+	<div class="hard"><img src="./images/couverture.jpg"> </div>
+	<div class="hard arrierecouv"><img src="./images/contes.jpg"> </div>
 
 	<div class="page"> 
 		
@@ -157,8 +157,14 @@ function resizeFlipbook() {
   } else {
     flipbookWidth = windowWidth > 768 ? 1188 : 600;
     flipbookHeight = windowWidth > 768 ? 850 : 400;
-  }
-
+  }// Rotation arriercouv en single page 
+  $(function() {
+  $("#flipbook").bind("start", function(event, pageObject, corner) {
+    if (corner === "tl" || corner === "l") {
+      $(".arrierecouv").toggleClass("rotate");
+    }
+  });
+});
   // On initialise le flipbook avec les paramètres de taille et de mode d'affichage
   $("#flipbook").turn({
     width: flipbookWidth,
@@ -171,6 +177,7 @@ function resizeFlipbook() {
 
 $(window).resize(function() {
   resizeFlipbook();
+  
 });
 
 // appel de la fonction pour la première fois
