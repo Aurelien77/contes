@@ -24,7 +24,7 @@
 <div id="flipbook" class="shadow">
 	
 	<div class="hard"><img src="./images/couverture.jpg"> </div>
-	<div class="hard arrierecouv"><img src="./images/contes.jpg"> </div>
+	<div class="hard"><img src="./images/contes.jpg"> </div>
 
 	<div class="page"> 
 		
@@ -142,11 +142,16 @@ function resizeFlipbook() {
   var isPortrait = windowHeight > windowWidth;
   var displayMode = isMobile && isPortrait ? 'single' : 'double';
 
-  // Si l'appareil est un iPad en mode paysage ou si tous les appareils sont en mode paysage, on garde le mode "double page"
-  var isIpad = navigator.userAgent.match(/iPad/i) != null;
-  var isLandscape = windowHeight < windowWidth;
-  if (isIpad || (!isMobile && isLandscape)) {
-    displayMode = 'double';
+  // Si l'appareil est en mode portrait, on active le mode "une page à la fois"
+  if (isPortrait) {
+    displayMode = 'single';
+  } else {
+    // Si l'appareil est un iPad en mode paysage ou si tous les appareils sont en mode paysage, on garde le mode "double page"
+    var isIpad = navigator.userAgent.match(/iPad/i) != null;
+    var isLandscape = windowHeight < windowWidth;
+    if (isIpad || (!isMobile && isLandscape)) {
+      displayMode = 'double';
+    }
   }
 
   // On calcule la largeur et la hauteur du flipbook en fonction du mode d'affichage
@@ -159,7 +164,6 @@ function resizeFlipbook() {
     flipbookHeight = windowWidth > 768 ? 850 : 400;
   }
   
-
   // On initialise le flipbook avec les paramètres de taille et de mode d'affichage
   $("#flipbook").turn({
     width: flipbookWidth,
@@ -172,7 +176,7 @@ function resizeFlipbook() {
 
 $(window).resize(function() {
   resizeFlipbook();
-  
+  location.reload();
 });
 
 // appel de la fonction pour la première fois
