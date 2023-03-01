@@ -142,10 +142,10 @@ function resizeFlipbook() {
   var isPortrait = windowHeight > windowWidth;
   var displayMode = isMobile && isPortrait ? 'single' : 'double';
 
-  // Si l'appareil est un iPad en mode paysage, on garde le mode "double page"
+  // Si l'appareil est un iPad en mode paysage ou si tous les appareils sont en mode paysage, on garde le mode "double page"
   var isIpad = navigator.userAgent.match(/iPad/i) != null;
   var isLandscape = windowHeight < windowWidth;
-  if (isIpad && isLandscape) {
+  if (isIpad || (!isMobile && isLandscape)) {
     displayMode = 'double';
   }
 
@@ -175,8 +175,6 @@ $(window).resize(function() {
 
 // appel de la fonction pour la première fois
 resizeFlipbook();
-
-
 
 
 </script>
