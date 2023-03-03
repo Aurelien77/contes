@@ -59,9 +59,11 @@ audio {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    margin-top: -1rem;
-    width: 50%;
    
+    width: 50%;
+
+   height: 15px;
+
     bottom: 5%;
    /*  position: fixed;
   bottom: 0;
