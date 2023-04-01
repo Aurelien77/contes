@@ -2,15 +2,9 @@
 
 <head>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-
-	<!-- Scale device  -->
-
-
-
-
-	<meta name="Site de contes"
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Scale device  -->
+<meta name="Site de contes"
     content="Austral est un site d'histoires où l'on fait ses contes" />
 
 
@@ -40,17 +34,6 @@
 <meta property="og:site_name" content="Austral" />
 
 <meta name="robots" content="index, follow" />
-
-
-
-
-
-
-
-
-
-
-
 
 	<link rel="stylesheet" type="text/css" href="index.css" />
 
@@ -117,23 +100,10 @@
 			  Page n°8 à n°9....................<span>Le perroquet et le rhinocéros</span>
 			 
 			</div>
-		
-
 		</div>
 	  </div>
-
-		
-		 
-
-	
 	</div>
-
-
-
-
-
-
-	<div class="page shadow"> <img src="./images/chat1.jpg">
+<div class="page shadow"> <img src="./images/chat1.jpg">
 		<audio controls preload="none">
 		<source src="./audio/chat.mp3" type="audio/mp3">
 		Votre navigateur ne supporte pas l'élément audio.
@@ -155,11 +125,20 @@
 		<source src="./audio/dragon.mp3" type="audio/mp3">
 		Votre navigateur ne supporte pas l'élément audio.
 	  </audio>  </div>
-	<div class="hard"></div>
+
+
+	  <div class="page"> <img src="./images/rhino.jpg"><audio controls preload="none">
+		<!-- <source src="./audio/dragon.mp3" type="audio/mp3"> -->
+		Votre navigateur ne supporte pas l'élément audio.
+	  </audio>  </div>
+	  <div class="page"> <img src="./images/perroquet.jpg"><audio controls preload="none">
+		<!-- <source src="./audio/dragon.mp3" type="audio/mp3"> -->
+		Votre navigateur ne supporte pas l'élément audio.
+	  </audio>  </div>
+<div class="hard"></div>
 	<div class="hard shadow"><img src="./images/contes.jpg"> </div>
 	<div class="hard"><img src="./images/dos.jpg"> </div>
 </div>
-
 
 </body>
 
@@ -178,9 +157,10 @@
 
     if (!isTV) {
         $("#flipbook").turn({
+			size: "stretch",
             width: 1120,
             height: 782,
-            autoCenter: false,
+            autoCenter: true,
             gradients: true,
             display: displayMode
         });
